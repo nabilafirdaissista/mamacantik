@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Mama Sayang! | Dari Bila</title>
+    <style>
+        /* Gaya Dasar & Latar Belakang */
+        body {
+            background-color: #fff0f3;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #4a4a4a;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* Efek Hujan Hati */
+        .heart {
+            position: fixed;
+            top: -10px;
+            font-size: 20px;
+            color: #ff4d6d;
+            user-select: none;
+            z-index: 1000;
+            pointer-events: none;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(105vh) rotate(360deg); }
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, #ffccd5 0%, #fff0f3 100%);
+            width: 100%;
+        }
+
+        h1 { color: #ff4d6d; font-size: 2.2rem; margin-bottom: 5px; text-shadow: 2px 2px white; }
+        
+        /* Kartu Ucapan - Dibuat Lebih Elegan untuk Teks Panjang */
+        .card {
+            background: white;
+            width: 85%;
+            max-width: 650px;
+            margin-top: -20px;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(255, 77, 109, 0.15);
+            text-align: center;
+            line-height: 1.8;
+            position: relative;
+        }
+
+        .card h3 { color: #ff4d6d; margin-top: 0; }
+        .ucapan-text { text-align: left; white-space: pre-line; font-size: 1.05rem; color: #555; }
+
+        /* Galeri Foto di folder /photo */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 800px;
+            width: 90%;
+        }
+
+        .gallery img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 6px solid white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .gallery img:hover { transform: scale(1.05) rotate(-2deg); }
+
+        /* Video & Musik */
+        .media-section { width: 90%; max-width: 500px; text-align: center; margin: 30px 0; }
+        video { width: 100%; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .music-player { background: #ffe5ec; padding: 15px; border-radius: 50px; margin-bottom: 20px; }
+
+        footer { margin: 50px; text-align: center; color: #ff8fa3; font-weight: bold; }
+    </style>
+</head>
+<audio id="mySong">
+    <source src="lagu.mp3" type="audio/mpeg">
+    Browser kamu tidak support audio.
+</audio>
+
+<div id="overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff0f3; z-index: 9999; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+    <h2 style="color: #ff4d6d; margin-bottom: 20px;">Ada pesan spesial buat Mama... 💌</h2>
+    <button onclick="mulai()" style="padding: 15px 30px; font-size: 1.2rem; background: #ff4d6d; color: white; border: none; border-radius: 50px; cursor: pointer; box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);">
+        Klik untuk Buka ❤️
+    </button>
+</div>
+
+<script>
+    const song = document.getElementById("mySong");
+
+    function mulai() {
+        // Sembunyikan overlay
+        document.getElementById("overlay").style.display = "none";
+        
+        // Putar lagu otomatis
+        song.play();
+        
+        // Mulai hujan hati
+        setInterval(createHeart, 400);
+    }
+
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.innerHTML = '💗'; 
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => { heart.remove(); }, 5000);
+    }
+</script>
+<body>
+    
+
+    <div class="header">
+        <h1>Selamt Ulang tahun Mamaaa Cantik! 🥺💗</h1>
+        <p>Spesial untuk mama terbaik di seluruh dunia !!</p>
+    </div>
+
+
+
+    <div class="media-section">
+
+
+        <h2 style="color: #ff4d6d;">🎥 </h2>
+    
+        <video autoplay muted loop controls style="margin-bottom: 20px;">
+            <source src="video.mp4" type="video/mp4">
+            Browser kamu tidak support video.
+        </video>
+
+
+    <h2 style="color: #ff4d6d;">📸</h2>
+    <div class="gallery">
+        <img src="photo/foto1.jpg" alt="Memori 1">
+        <img src="photo/foto2.jpg" alt="Memori 2">
+        <img src="photo/foto3.jpg" alt="Memori 3">
+        <img src="photo/foto4.jpg" alt="Memori 4">
+        <img src="photo/foto5.jpg" alt="Memori 5">
+        <img src="photo/foto6.jpg" alt="Memori 6">
+        <img src="photo/foto7.jpg" alt="Memori 7">
+        <img src="photo/foto8.jpg" alt="Memori 8">
+        <img src="photo/foto9.jpg" alt="Memori 9">
+        <img src="photo/foto10.jpg" alt="Memori 10">
+        <img src="photo/foto11.jpg" alt="Memori 11">
+        <img src="photo/foto12.jpg" alt="Memori 12">
+        <img src="photo/foto13.jpg" alt="Memori 13">
+        <img src="photo/foto14.jpg" alt="Memori 14">
+        <img src="photo/foto15.jpg" alt="Memori 15">
+        <img src="photo/foto16.jpg" alt="Memori 16">
+    </div>
+        <div class="card">
+        <h3>Dari Bila Untuk Mama ❤️</h3>
+        <div class="ucapan-text">
+            Selamat ulang tahun mama ku yang paling cantik, paling kuat, dan paling sabar di duniaa 🥹💗
+
+            hari ini bila cuma mau bilang makasih banyak buat mama. makasih karena sudah jadi rumah paling nyaman buat bila pulang, jadi orang yang selalu ada kapan pun bila butuh, dan jadi orang yang selalu percaya sama bila bahkan waktu bila sendiri kadang ragu sama diri bila.
+
+            ma, semoga di umur mama yang sekarang mama selalu dikasih kesehatan, umur yang panjang, hati yang tenang, dan kebahagiaan yang banyak banget. semoga semua doa baik mama selama ini balik lagi ke mama berkali-kali lipat. bila selalu doa supaya mama sama papa selalu dilindungi sama Allah, dijauhkan dari sakit, dan bisa terus lihat anak-anak mama tumbuh dan berhasil. aamiin 🤲🏻
+
+            maaf ya ma kalau selama ini bila masih sering bikin mama capek, bikin mama kepikiran, atau kadang masih banyak salahnya. bila tau bila belum bisa jadi anak yang sempurna, tapi bila selalu berusaha supaya suatu hari nanti bila bisa bikin mama bangga dan bahagia.
+
+            terima kasih sudah jadi mama terbaik yang Allah kasih ke bila. makasih sudah selalu sabar ngadepin bila dari kecil sampai sekarang, makasih sudah selalu ngerti bila, selalu doain bila, dan selalu sayang sama bila tanpa syarat.
+
+            panjang umur mama ku, sehat selalu, dan tetap jadi mama paling hebat untuk kami semua 🤍
+
+            <b>sayang mama banyakk banyakk 🫶🏻</b>
+        </div>
+    </div>
+
+    <footer>
+        <p>I Love You, Mama! ✨</p>
+    </footer>
+
+
+    <script>
+        // Script untuk bikin hujan hati otomatis
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '💗'; 
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createHeart, 400);
+
+        window.onload = function() {
+            alert("Halo Mama Sayang! Bila punya sesuatu buat Mama.. Klik OK ya! ❤️");
+        };
+    </script>
+</body>
+</html>
